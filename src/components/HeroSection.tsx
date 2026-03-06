@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-illustration.png";
 
 const badges = [
-  { icon: Users, label: "Команда специалистов" },
-  { icon: BookOpen, label: "Образовательная система" },
-  { icon: Heart, label: "Индивидуальный подход" },
-  { icon: Shield, label: "Поддержка семьи" },
+  { icon: Users, label: "Команда специалистов", description: "Психолог, логопед, тьютор, преподаватель и невролог — все в одном месте" },
+  { icon: BookOpen, label: "Образовательная система", description: "Курсы, занятия и LMS-платформа для развития вашего ребёнка" },
+  { icon: Heart, label: "Индивидуальный подход", description: "Персональная диагностика и стратегия, подобранная под возраст и потребности" },
+  { icon: Shield, label: "Поддержка семьи", description: "Еженедельные отчёты, чат со специалистами и отслеживание прогресса" },
 ];
 
 const HeroSection = () => {
@@ -68,21 +68,26 @@ const HeroSection = () => {
           </div>
 
           {/* Badges */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {badges.map((badge, i) => (
               <motion.div
                 key={badge.label}
-                className="flex items-center gap-2.5 rounded-xl bg-card px-4 py-3 shadow-soft"
+                className="flex items-start gap-3 rounded-xl bg-card px-4 py-4 shadow-soft"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + i * 0.1 }}
               >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <badge.icon className="h-4.5 w-4.5 text-primary" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                  <badge.icon className="h-5 w-5 text-primary" />
                 </div>
-                <span className="font-display text-sm font-semibold text-foreground">
-                  {badge.label}
-                </span>
+                <div>
+                  <span className="font-display text-sm font-bold text-foreground">
+                    {badge.label}
+                  </span>
+                  <p className="mt-0.5 font-body text-xs leading-snug text-muted-foreground">
+                    {badge.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
