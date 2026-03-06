@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-illustration.png";
 
 const badges = [
-  { icon: Users, label: "Команда специалистов" },
-  { icon: BookOpen, label: "Образовательная система" },
-  { icon: Heart, label: "Индивидуальный подход" },
-  { icon: Shield, label: "Поддержка семьи" },
+  { icon: Users, label: "Команда специалистов", description: "Психолог, логопед, тьютор, преподаватель и невролог — все в одном месте" },
+  { icon: BookOpen, label: "Образовательная система", description: "Курсы, занятия и LMS-платформа для развития вашего ребёнка" },
+  { icon: Heart, label: "Индивидуальный подход", description: "Персональная диагностика и стратегия, подобранная под возраст и потребности" },
+  { icon: Shield, label: "Поддержка семьи", description: "Еженедельные отчёты, чат со специалистами и отслеживание прогресса" },
 ];
 
 const HeroSection = () => {
